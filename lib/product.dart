@@ -12,16 +12,24 @@ class Product {
       this.active,
       this.type
       );
+  Product.empty() {
+    productName = "";
+    productDetails = "";
+    stocks = 0;
+    frozen = false;
+    active = false;
+    type = "";
+  }
 
   @JsonKey(name: "product_name")
-  String productName;
+  String? productName;
 
   @JsonKey(name: "product_details")
-  String productDetails;
-  int stocks;
-  bool frozen;
-  bool active;
-  String type;
+  String? productDetails;
+  int stocks = 0;
+  bool? frozen;
+  bool? active;
+  String? type;
 
   Map<String, dynamic> toJson() => _$ProductToJson(this);
 }
